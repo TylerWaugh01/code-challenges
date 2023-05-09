@@ -56,12 +56,12 @@
       let closeButton = document.getElementById("closeModal");
       let dontShowAgainCheckbox = document.getElementById("dontShowAgain");
 
-      // Check if the user has checked the "Don't show this again" checkbox
+      // if dontShowAgain is true, don't show modal 
       if (localStorage.getItem("dontShowAgain") === "true") {
         modal.style.display = "none";
       }
 
-      // When the user clicks the close button, hide the modal and save the checkbox value
+      //  Clicking button will set dontShowAgain to true 
       closeButton.onclick = function () {
         modal.style.display = "none";
         if (dontShowAgainCheckbox.checked) {
@@ -71,7 +71,7 @@
         }
       };
 
-      // When the user clicks the close icon, hide the modal and save the checkbox value
+      // clicking X will turn off modal and set dontShowAgain to true if box is clicked
       let closeIcon = document.getElementsByClassName("close")[0];
       closeIcon.onclick = function () {
         modal.style.display = "none";
