@@ -3,36 +3,44 @@
 <head>
   <style>
     .video-container {
-      position: relative;
+      /* position: relative; */
       width: 640px;
       height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 27%;
+    margin-top: 5%;
     }
     
-    #player {
-      position: absolute;
-      top: 0;
-      left: 0;
+     #player {
+      justify-content: center;
+    align-items: center; 
     }
     
     .controls {
-      position: absolute;
-      bottom: 10px;
-      left: 250px;
-    }
+      margin-top: 10px;
+    } 
 
     .play {
       background-color: rgb(1, 255, 73);
-      color: black
+      color: black;
+      font-size: 20px;
+      
     }
 
     .pause {
       background-color: rgb(204, 236, 21);
-      color: black
+      color: black;
+      font-size: 20px;
     }
 
     .stop {
       background-color: rgb(236, 21, 21);
-      color: black
+      color: black;
+      font-size: 20px;
     }
   </style>
 </head>
