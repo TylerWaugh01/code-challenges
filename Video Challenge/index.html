@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .video-container {
+      position: relative;
+      width: 640px;
+      height: 360px;
+    }
+    
+    #player {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .controls {
+      position: absolute;
+      bottom: 10px;
+      left: 250px;
+    }
+
+    .play {
+      background-color: rgb(1, 255, 73);
+      color: black
+    }
+
+    .pause {
+      background-color: rgb(204, 236, 21);
+      color: black
+    }
+
+    .stop {
+      background-color: rgb(236, 21, 21);
+      color: black
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <div id="player"></div>
+    
+    <!-- My Buttons -->
+    <div class="controls"> 
+      <button class='play' id="playBtn">Play</button>
+      <button class='pause' id="pauseBtn">Pause</button>
+      <button class='stop' id="stopBtn">Stop</button>
+    </div>
+  </div>
+
+  <script>
+    // YouTube Player API callback function
+    function onYouTubePlayerAPIReady() {
+      var player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: '3L6Ur9yNOhU',
+        playerVars: {
+          autoplay: 0, // Change to 1 if you want the video to autoplay
+        },
+      });
+      
+      let playBtn = document.getElementById("playBtn");
+      let pauseBtn = document.getElementById("pauseBtn");
+      let stopBtn = document.getElementById("stopBtn");
+     
+      playBtn.addEventListener("click", function() {
+        player.playVideo();
+      });
+      
+      pauseBtn.addEventListener("click", function() {
+        player.pauseVideo();
+      });
+      
+      stopBtn.addEventListener("click", function() {
+        player.stopVideo();
+      });
+    }
+  </script>
+  
+  <!-- Include the YouTube IFrame Player API -->
+  <script src="https://www.youtube.com/player_api"></script>
+</body>
+</html>
